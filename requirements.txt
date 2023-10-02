@@ -1,15 +1,1 @@
-pandas==2.0.1
-mysql-connector-python==8.0.33
-numpy==1.25.1
-pandas==2.0.1
-scikit-learn==0.24.1
-scikit-learn-extra==0.3.0
-scipy==1.11.1
 Flask==2.3.2
-google-api-core==2.11.1
-google-api-python-client==2.93.0
-google-auth==2.22.0
-google-auth-httplib2==0.1.0
-googleapis-common-protos==1.59.1
-googlesearch-python==1.2.3
-requests==2.31.0
