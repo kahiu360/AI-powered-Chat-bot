@@ -3,7 +3,7 @@
 Volt-Chat is an AI powered chatbot which will be integrated into the Volta Electric Vehicle Website It is intended to provide customers of Volta Electric Vehicle company with accurate and relevant responses to their questions without them contacting customer service desk in the company. The chatbot is designed to be user-friendly such that visitors of the company’s website will interact with it seamlessly as if they were conversing with a professional at the customer service desk. The chat-bot is developed using flask and a wit.ai application that utilizes NLP techniques to understand customer queries and provide them with relevant responses.
 
 
-### User Instructions
+## User Instructions
 
 Step 1: Make sure your computer is connected to the internet so as to download project dependencies.
 
