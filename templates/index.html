@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Volta Electric Cars</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">Volta Electric Vehicles</h1>
+        
+        <div class="grid">
+            <div></div>
+             <div class="chat-grid">
+                <h2 class="subtitle">Volt-Chat</h2>
+                <div class="chat-container">
+                    <div class="chat-log" id="chat-log"></div>
+                    <div class="message-box">
+                        <input type="text" id="message-input" class="input" placeholder="Type your message..." autofocus>
+                        <button id="send-button" class="button is-primary">Send</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+        const chatLog = document.getElementById('chat-log');
+        const messageInput = document.getElementById('message-input');
+        const sendButton = document.getElementById('send-button');
+
+        sendButton.addEventListener('click', () => {
+            const messageText = messageInput.value;
+            if (messageText.trim() === '') {
+                return;
+            }
+            addMessageToLog(messageText, 'user');
+            messageInput.value = '';
+
+            axios.post('/message', {message: messageText})
+                .then((response) => {
+                    const botResponse = response.data.response;
+                    addMessageToLog(botResponse, 'bot');
+                })
+                .catch((error) => {
+                    console.error(error);
+                });
+        });
+
+        messageInput.addEventListener('keyup', (event) => {
+            if (event.key === 'Enter') {
+                sendButton.click();
+            }
+        });
+
+        function addMessageToLog(message, sender) {
+            const messageElement = document.createElement('div');
+            messageElement.classList.add('message');
+            messageElement.classList.add(sender);
+
+            const messageText = document.createTextNode(message);
+            messageElement.appendChild(messageText);
+
+            chatLog.appendChild(messageElement);
+
+            chatLog.scrollTop = chatLog.scrollHeight;
+        }
+    </script>
+</body>
+</html>

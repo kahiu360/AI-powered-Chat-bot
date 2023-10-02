@@ -1,0 +1,160 @@
+        /* Reset styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Global styles */
+        body {
+            font-family: "Open Sans", sans-serif;
+            font-size: 16px;
+            background-image: url('image.jpg'); /* Modified path to image */
+            background-color: #f5f5f5;
+            }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .title {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 36px;
+            font-weight: bold;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            grid-gap: 20px;
+        }
+
+        .subtitle {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            text-align: center; /* Center align the title text */
+        }
+
+        .car-list li {
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+
+        .chat-grid {
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 20px;
+            border: 2px solid #3273dc; /* Added blue border */
+            background-color: #c2b8b8; /* Changed background color */
+            margin-top: auto; /* Push the chat grid to the bottom of the page */
+            margin-right: 20px;
+            margin-left: 20px; /* Add margin to the left */
+            overflow-y: auto;
+        }
+
+        .chat-container {
+            display: flex;
+            flex-direction: column;
+            height: 450px;
+            width: 200;
+            justify-content: flex-end;
+        }
+
+        .chat-log {
+            background-color: #f5f5f5;
+            overflow-y: scroll;
+            flex-grow: 1;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .message {
+
+            margin-bottom: 10px;
+            padding: 10px;
+            border-radius: 8px;
+            max-width: 80%;
+        }
+
+        .user {
+            background-color: #f1f0f0;
+            align-self: flex-start;
+        }
+
+        .bot {
+            background-color: #4caf50;
+            color: white;
+            align-self: flex-end;
+        }
+
+        .message-box {
+            display: flex;
+        }
+
+        .input {
+            display: flex;
+            flex-grow: 1;
+            padding: 10px;
+            border-radius: 8px;
+            border: none;
+            background-color: #f5f5f5;
+            margin-right: 10px;
+        }
+
+        .button {
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 10px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.2s;
+        }
+
+        .button:hover {
+            background-color: #3e8e41;
+        }
+
+        .button.is-primary {
+            background-color: #3273dc;
+        }
+
+        .button.is-primary:hover {
+            background-color: #2769c4;
+        }
+
+        @media screen and (max-width: 768px) {
+            .grid {
+                display: block;
+            }
+
+            .chat-grid {
+                margin-top: 20px;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .title {
+                font-size: 24px;
+            }
+
+            .subtitle {
+                font-size: 20px;
+            }
+
+            
+            .message-box {
+                flex-direction: column;
+            }
+
+            .input {
+                margin-bottom: 10px;
+            }
+        }
+   
